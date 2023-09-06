@@ -1,6 +1,8 @@
 pipeline{
     agent any
-   
+    toos{
+        maven 'Maven'
+    }
     stages{
         stage("Build"){
             steps {
