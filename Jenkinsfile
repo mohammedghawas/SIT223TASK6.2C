@@ -1,11 +1,6 @@
 pipeline{
     agent any
-    environment{
-        DIRECTORY_PATH = "Github Repo SIT223TASK6.2C"
-    }
-    tools { 
-        maven 'Maven 3.9.4' 
-    }
+   
     stages{
         stage("Build"){
             steps {
