@@ -1,20 +1,25 @@
 pipeline{
     agent any
     environment{
-        DIRECTORY_PATH = "SIT223"
-        TESTING_ENVIRONMENT = "staging.deakin.au.ac"
-        PRODUCTION_ENVIRONMENT = "new.deakin.au.ac"
+        DIRECTORY_PATH = "Github Repo SIT223TASK6.2C"
+    }
+    tools { 
+        maven 'Maven 3.9.4' 
     }
     stages{
         stage("Build"){
-            steps{
-                echo "Fetch the source code from $DIRECTORY_PATH "
+            steps {
+                sh 'mvn clean package'
                 echo "Compile the code and generate any necessary artifacts"
             }
         }
-        stage("Test"){
+        stage(" Unit and Integration Tests"){
             steps{
-                echo "Unit tests completed successfully..."
+                 sh '''
+                    cd  /Users/yen.nguyen/Downloads/Katalon_Studio_Engine_MacOS-8.1.0/Katalon\\ Studio\\ Engine.app/Contents/MacOS
+                    ./katalonc  -projectPath="/Users/yen.nguyen/Downloads/ci-samples-master/test.prj" -browserType="Chrome" -retry=0 -statusDelay=15 -testSuitePath="Test Suites/TS_RegressionTest" -apiKey="<user API key>" -orgID=<Katalon_OrgID>
+                '''
+                echo "Katalon Unit tests completed successfully..."
                 echo "Integration tests completed successfully.."
             }
         }
