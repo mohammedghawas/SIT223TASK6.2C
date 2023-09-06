@@ -8,7 +8,7 @@ pipeline{
                 echo "Compile the code and generate any necessary artifacts"
             }
         }
-        stage(" Unit and Integration Tests"){
+        stage("Unit and Integration Tests"){
             steps{
                  sh '''
                     cd  /Users/yen.nguyen/Downloads/Katalon_Studio_Engine_MacOS-8.1.0/Katalon\\ Studio\\ Engine.app/Contents/MacOS
@@ -25,7 +25,7 @@ pipeline{
         }
         stage("Deploy"){
             steps{
-                echo "Deployment the application to $TESTING_ENVIRONMENT started and completed successfully"
+                echo "Deployment the application  started and completed successfully"
             }
         }
         stage("Approval"){
@@ -36,7 +36,7 @@ pipeline{
         }
          stage("Deploy to Production"){
             steps{
-                echo "Deployment to $PRODUCTION_ENVIRONMENT started and completed successfully"
+                echo "Deployment to started and completed successfully"
             }
         }
     }   
