@@ -71,12 +71,12 @@ pipeline{
                 echo"===AWS EC2 Integration Tests==="
                 echo "Integration tests on the staging environment started and completed successfully"
             }
-        }stage("Deploy to Production"){
+        }
+        stage("Deploy to Production"){
             steps{
                 echo"===Deployment to AWS EC2 Prod"
                 echo "Deployment to $PRODUCTION_ENVIRONMENT started and completed successfully"
             }
         }
-    }   
-    }   
+    }    
 }
