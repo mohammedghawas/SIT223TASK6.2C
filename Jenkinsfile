@@ -24,13 +24,13 @@ pipeline{
                     mail to: "mohghawas@gmail.com",
                     subject: "$PROJECT - Unit and Integration Tests",
                     body: "Unit and Integration Test Completed successfully!",
-                    attachLog: true
+                    emailext attachLog: true
                 }
                 failure{
                     mail to: "mohghawas@gmail.com",
                     subject: "$PROJECT - Unit and Integration Test",
                     body: "Unit and Integration Test for the $PROJECT failed. Find attached logs",
-                    attachLog: true
+                    emailext attachLog: true
                 }
             }
         }
@@ -50,13 +50,13 @@ pipeline{
                     mail to: "mohghawas@gmail.com",
                     subject: "$PROJECT - Security Scan",
                     body: "Security Scan for the $PROJECT Completed successfully!",
-                    attachLog: true
+                    emailext attachLog: true
                 }
                 failure{
                     mail to: "mohghawas@gmail.com",
                     subject: "$PROJECT - Security Scan",
                     body: "Security Scan for the $PROJECT failed. Find attached logs",
-                    attachLog: true
+                    emailext attachLog: true
                 }
             }
         }
