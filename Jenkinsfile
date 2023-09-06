@@ -12,7 +12,9 @@ pipeline{
             steps{
                  sh '''
                     cd  C:\Users\mohgh\OneDrive\Documents\katalon
-                      -projectPath="/Users/yen.nguyen/Downloads/ci-samples-master/test.prj" -browserType="Chrome" -retry=0 -statusDelay=15 -testSuitePath="Test Suites/TS_RegressionTest" -apiKey="<user API key>" -orgID=<Katalon_OrgID>
+                      -projectPath="C:\Users\mohgh\OneDrive\Documents\GitHub\SIT223TASK6.2C/index.html" 
+                      -browserType="Chrome" -retry=0 -statusDelay=15 
+                      -testSuitePath="Test Suites/TS_RegressionTest" -apiKey="<user API key>" -orgID=<Katalon_OrgID>
                 '''
                 echo "Katalon Unit tests completed successfully..."
                 echo "Integration tests completed successfully.."
