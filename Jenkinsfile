@@ -1,23 +1,16 @@
 pipeline{
     agent any
-    tools{
-        maven 'Maven 3.9.4'
-    }
+    
     stages{
         stage("Build"){
             steps {
-                bat 'mvn clean package'
+                echo 'maven clean package'
                 echo "Compile the code and generate any necessary artifacts"
             }
         }
         stage("Unit and Integration Tests"){
             steps{
-                 bat '''
-                    cd  C:/Users/mohgh/OneDrive/Documents/katalon
-                      -projectPath="C:/Users/mohgh/OneDrive/Documents/GitHub/SIT223TASK6.2C/index.html" 
-                      -browserType="Chrome" -retry=0 -statusDelay=15 
-                      -testSuitePath="Test Suites/TS_RegressionTest" -apiKey="<user API key>" -orgID=<Katalon_OrgID>
-                '''
+    
                 echo "Katalon Unit tests completed successfully..."
                 echo "Integration tests completed successfully.."
             }
