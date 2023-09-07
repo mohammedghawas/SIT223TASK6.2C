@@ -21,15 +21,15 @@ pipeline{
             }
             post{
                 success{
-                    emailext body: 'Unit and Integration Test Completed successfully!',
+                    body: 'Unit and Integration Test Completed successfully!',
                     to: 'mohghawas@gmail.com',
                     subject: '$PROJECT - Unit and Integration Tests'
                     //attachLog: true
                 }
                 failure{
-                    emailext body: 'Unit and Integration Test for the $PROJECT failed. Find attached logs',
-                        to: 'mohghawas@gmail.com',
-                        subject:'$PROJECT - Unit and Integration Test'
+                    body: 'Unit and Integration Test for the $PROJECT failed. Find attached logs',
+                    to: 'mohghawas@gmail.com',
+                    subject:'$PROJECT - Unit and Integration Test'
                         //attachLog: true
                 }
             }
@@ -47,15 +47,15 @@ pipeline{
             }
             post{
                 success{
-                    emailext body: 'Security Scan for the $PROJECT Completed successfully!',
-                        to: 'mohghawas@gmail.com',
-                        subject: '$PROJECT - Security Scan'
+                    body: 'Security Scan for the $PROJECT Completed successfully!',
+                    to: 'mohghawas@gmail.com',
+                    subject: '$PROJECT - Security Scan'
                         //attachLog: true
                 }
                 failure{
-                    emailext body: 'Security Scan for the $PROJECT failed. Find attached logs',
-                        to:'mohghawas@gmail.com',
-                        subject: '$PROJECT - Security Scan'
+                    body: 'Security Scan for the $PROJECT failed. Find attached logs',
+                    to:'mohghawas@gmail.com',
+                    subject: '$PROJECT - Security Scan'
                         //attachLog: true
                 }
             }
