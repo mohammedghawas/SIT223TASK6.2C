@@ -8,7 +8,7 @@ pipeline{
     stages{
         stage("Build"){
             steps {
-                echo '===Apache Maven Build Tool==='
+                echo "===Apache Maven Build Tool==="
                 echo "Compile the code and generate any necessary artifacts"
             }
         }
@@ -21,15 +21,15 @@ pipeline{
             }
             post{
                 success{
-                    mail to: 'mohghawas@gmail.com',
-                    subject: '$PROJECT - Unit and Integration Tests',
-                    body: 'Unit and Integration Test Completed successfully!'
+                    mail to: "mohghawas@gmail.com",
+                    subject: "$PROJECT - Unit and Integration Tests",
+                    body: "Unit and Integration Test Completed successfully!"
                     //attachLog: true
                 }
                 failure{
-                    mail to: 'mohghawas@gmail.com',
-                    subject:'$PROJECT - Unit and Integration Test',
-                    body: 'Unit and Integration Test for the $PROJECT failed. Find attached logs'
+                    mail to: "mohghawas@gmail.com",
+                    subject:"$PROJECT - Unit and Integration Test",
+                    body: "Unit and Integration Test for the $PROJECT failed. Find attached logs"
                         //attachLog: true
                 }
             }
@@ -47,15 +47,15 @@ pipeline{
             }
             post{
                 success{
-                    mail to: 'mohghawas@gmail.com',
-                    subject: '$PROJECT - Security Scan',
-                    body: 'Security Scan for the $PROJECT Completed successfully!'
+                    mail to: "mohghawas@gmail.com",
+                    subject: "$PROJECT - Security Scan",
+                    body: "Security Scan for the $PROJECT Completed successfully!"
                         //attachLog: true
                 }
                 failure{
-                    mail to:'mohghawas@gmail.com',
-                    subject: '$PROJECT - Security Scan',
-                    body: 'Security Scan for the $PROJECT failed. Find attached logs'
+                    mail to:"mohghawas@gmail.com",
+                    subject: "$PROJECT - Security Scan",
+                    body: "Security Scan for the $PROJECT failed. Find attached logs"
                         //attachLog: true
                 }
             }
