@@ -21,13 +21,10 @@ pipeline{
             }
             post{
                 success{
-                    emailext attachLog: true, body: "Unit and Integration Test Completed successfully", 
-                    compressLog: true, replyTo: 'mohghawas@gmail.com',
-                    subject: "$PROJECT - Unit and Integration Tests", 
-                    to: 'mohghawas@gmail.com'
-                    //mail to: "mohghawas@gmail.com",
-                    //subject: "$PROJECT - Unit and Integration Tests",
-                    //body: "Unit and Integration Test Completed successfully!"
+                    
+                    mail to: "mohghawas@gmail.com",
+                    subject: "$PROJECT - Unit and Integration Tests",
+                    body: "Unit and Integration Test Completed successfully!"
                     //attachLog: true
                 }
                 failure{
