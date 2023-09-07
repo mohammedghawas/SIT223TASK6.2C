@@ -21,15 +21,15 @@ pipeline{
             }
             post{
                 success{
-                    body: 'Unit and Integration Test Completed successfully!',
-                    to: 'mohghawas@gmail.com',
-                    subject: '$PROJECT - Unit and Integration Tests'
+                    mail to: 'mohghawas@gmail.com',
+                    subject: '$PROJECT - Unit and Integration Tests',
+                    body: 'Unit and Integration Test Completed successfully!'
                     //attachLog: true
                 }
                 failure{
-                    body: 'Unit and Integration Test for the $PROJECT failed. Find attached logs',
-                    to: 'mohghawas@gmail.com',
-                    subject:'$PROJECT - Unit and Integration Test'
+                    mail to: 'mohghawas@gmail.com',
+                    subject:'$PROJECT - Unit and Integration Test',
+                    body: 'Unit and Integration Test for the $PROJECT failed. Find attached logs'
                         //attachLog: true
                 }
             }
@@ -47,15 +47,15 @@ pipeline{
             }
             post{
                 success{
-                    body: 'Security Scan for the $PROJECT Completed successfully!',
-                    to: 'mohghawas@gmail.com',
-                    subject: '$PROJECT - Security Scan'
+                    mail to: 'mohghawas@gmail.com',
+                    subject: '$PROJECT - Security Scan',
+                    body: 'Security Scan for the $PROJECT Completed successfully!'
                         //attachLog: true
                 }
                 failure{
-                    body: 'Security Scan for the $PROJECT failed. Find attached logs',
-                    to:'mohghawas@gmail.com',
-                    subject: '$PROJECT - Security Scan'
+                    mail to:'mohghawas@gmail.com',
+                    subject: '$PROJECT - Security Scan',
+                    body: 'Security Scan for the $PROJECT failed. Find attached logs'
                         //attachLog: true
                 }
             }
