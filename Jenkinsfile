@@ -23,7 +23,7 @@ pipeline{
                 success{
                     emailext attachLog: true,
                     attachmentsPattern: '*',
-                    mail to: "mohghawas@gmail.com",
+                    to: "mohghawas@gmail.com",
                     subject: "$PROJECT - Unit and Integration Tests",
                     body: "Unit and Integration Test Completed successfully!"
                     //attachLog: true
